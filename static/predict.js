@@ -17,7 +17,7 @@ myPredict = async function(){
   //  console.log('Model Predict')
     
                                                                                              
-  const image = tf.fromPixels(document.getElementById('my32x32CanvasA')).reshape([1, 48, 48, 3]) ;
+  const image = tf.fromPixels(document.getElementById('my32x32CanvasA')).toFloat().sub(tf.scalar(127.5)).div(tf.scalar(127.5)).reshape([1, 200, 200, 3]) ;
                                                                                              
                                                                                          
                                                                                              
